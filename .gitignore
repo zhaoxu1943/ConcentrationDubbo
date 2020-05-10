@@ -1,0 +1,4 @@
+# Project exclude paths
+/dubbo-demo-xml-consumer/target/
+/dubbo-demo-xml-provider-01/target/
+/dubbo-interface/target/
