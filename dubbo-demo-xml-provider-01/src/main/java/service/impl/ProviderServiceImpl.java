@@ -33,7 +33,7 @@ public class ProviderServiceImpl implements ProviderService {
     public UserInfo getUserInfo() {
         UserInfo userInfo = new UserInfo();
         userInfo.setAge(1);
-        userInfo.setUserName("发财");
+        userInfo.setUserName("test@");
         return userInfo;
 
 
