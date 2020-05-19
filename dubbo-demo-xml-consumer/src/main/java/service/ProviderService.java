@@ -13,4 +13,6 @@ public interface ProviderService {
 
     public UserInfo getUserInfo();
 
+    String echo(String message);
+
 }

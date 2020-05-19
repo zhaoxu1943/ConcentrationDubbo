@@ -1,10 +1,14 @@
 package service.impl;
 
 
+import com.alibaba.dubbo.rpc.RpcContext;
 import model.UserInfo;
+import org.apache.commons.lang3.time.DateFormatUtils;
 import service.ProviderService;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -13,6 +17,7 @@ import java.util.List;
  */
 public class ProviderServiceImpl implements ProviderService {
 
+    @Override
     public List<HashMap<String, String>> getHashMapInfo() {
         HashMap<String,String> hashMap1= new HashMap<String, String>(1);
         hashMap1.put("name","RPC call 成功!");
@@ -30,6 +35,7 @@ public class ProviderServiceImpl implements ProviderService {
         return result;
     }
 
+    @Override
     public UserInfo getUserInfo() {
         UserInfo userInfo = new UserInfo();
         userInfo.setAge(1);
@@ -40,7 +46,10 @@ public class ProviderServiceImpl implements ProviderService {
     }
 
 
+    @Override
+    public String echo(String message) {
 
-
-
+        System.out.println(RpcContext.getContext().getRemoteAddress());
+        return "wo diao ni ma de !";
+    }
 }
