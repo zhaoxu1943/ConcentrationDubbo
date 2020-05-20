@@ -1,3 +1,4 @@
+import config.DubboConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
@@ -7,7 +8,9 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  * @date 2020/5/20 12:15
  */
 public class AnnotationProvider {
-    public static void main(String[] args) {
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext()
+    public static void main(String[] args) throws  Exception {
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(DubboConfig.class);
+        context.start();
+        System.in.read();
     }
 }
