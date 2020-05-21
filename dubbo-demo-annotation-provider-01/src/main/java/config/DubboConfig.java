@@ -20,12 +20,13 @@ public class DubboConfig {
 
 
     /**
-     *
+     * dubbo服务提供者的配置文件,配置了provider方的信息
      * @author zhaoxu
      * @param
      * @return
      * @throws
      */
+    @Bean
     public ProviderConfig providerConfig() {
         return new ProviderConfig();
     }
@@ -56,6 +57,7 @@ public class DubboConfig {
      * @return
      * @throws
      */
+    @Bean
     public RegistryConfig registryConfig() {
         RegistryConfig registryConfig = new RegistryConfig();
         registryConfig.setProtocol("zookeeper");
