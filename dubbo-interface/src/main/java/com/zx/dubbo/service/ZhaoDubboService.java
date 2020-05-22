@@ -1,6 +1,8 @@
-package com.dubbo.service;
+package com.zx.dubbo.service;
 
-import com.dubbo.model.UserInfo;
+
+
+import com.zx.dubbo.model.UserInfo;
 
 import java.util.HashMap;
 import java.util.List;
@@ -8,7 +10,7 @@ import java.util.List;
 /**
  * @author zhaoxu
  */
-public interface ProviderService {
+public interface ZhaoDubboService {
 
     /**
      * @author zhaoxu
