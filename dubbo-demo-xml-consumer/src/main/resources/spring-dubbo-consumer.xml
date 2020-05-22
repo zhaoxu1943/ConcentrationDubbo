@@ -5,12 +5,12 @@
        http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
 
     <!--服务方名称,方便依赖跟踪-->
-    <dubbo:application name="demo-consumer"/>
-
+    <dubbo:application name="dubbo-demo-xml-consumer"/>
     <!--注册中心-->
     <dubbo:registry address="zookeeper://localhost:2181"/>
 
-    <dubbo:reference id="provideService" check="false" interface="service.ProviderService"/>
+    <!--id就是bean 的id,还是provider中bean声明的-->
+    <dubbo:reference id="zhaoDubboService" check="false" interface="com.zx.dubbo.common.service.ZhaoDubboService"/>
 
 
 </beans>

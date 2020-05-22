@@ -5,16 +5,18 @@
        http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
 
     <!-- 提供方应用信息，用于计算依赖关系 -->
-    <dubbo:application name="demo-provider"/>
+    <dubbo:application name="dubbo-demo-xml-provider-01"/>
     <!-- 使用multicast广播注册中心暴露服务地址 -->
     <dubbo:registry address="zookeeper://localhost:2181"/>
-    <!-- 用dubbo协议在20880端口暴露服务 -->
+    <!-- 用dubbo协议在20890端口暴露服务 -->
     <dubbo:protocol name="dubbo" port="20890"/>
     <!-- 声明需要暴露的服务接口 -->
-    <dubbo:service interface="com.zx.dubbo.service.ZhaoDubboService" ref="zhaoDubboService"/>
+   <!-- interface   必填		服务发现	服务接口名
+        ref			必填		服务发现	服务对象实现引用-->
+    <dubbo:service interface="com.zx.dubbo.common.service.ZhaoDubboService" ref="zhaoDubboService"/>
 
 
 
-    <!-- 和本地bean一样实现服务 -->
-    <bean id="providerService" class="service.impl.ProviderServiceImpl"/>
+    <!-- 和本地bean一样实现服务 这里的bean id 填到dubbo:service的ref中-->
+    <bean id="zhaoDubboService" class="com.zx.dubbo.demo.xml.provider.service.impl.ZhaoDubboServiceImpl"/>
 </beans>

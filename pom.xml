@@ -15,7 +15,7 @@
     <modules>
         <module>dubbo-demo-xml-provider-01</module>
         <module>dubbo-demo-xml-consumer</module>
-        <module>dubbo-interface</module>
+        <module>dubbo-common</module>
         <module>dubbo-demo-annotation-provider-01</module>
         <module>dubbo-demo-annotation-consumer</module>
     </modules>
@@ -74,7 +74,7 @@
 
         <dependency>
             <groupId>org.zx</groupId>
-            <artifactId>dubbo-interface</artifactId>
+            <artifactId>dubbo-common</artifactId>
             <version>1.0.0</version>
         </dependency>
 
