@@ -72,11 +72,12 @@
             <version>3.6</version>
         </dependency>
 
-
         <dependency>
-            <groupId>com.du</groupId>
-            <artifactId></artifactId>
+            <groupId>org.zx</groupId>
+            <artifactId>dubbo-interface</artifactId>
+            <version>1.0.0</version>
         </dependency>
+
     </dependencies>
 
 </project>

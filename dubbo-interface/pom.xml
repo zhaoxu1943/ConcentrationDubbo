@@ -9,7 +9,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <groupId>org.zx</groupId>
     <artifactId>dubbo-interface</artifactId>
+    <version>1.0.0</version>
     <description>dubbo interface and model</description>
 
 </project>

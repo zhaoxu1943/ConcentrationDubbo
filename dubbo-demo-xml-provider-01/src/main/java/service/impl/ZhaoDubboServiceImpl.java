@@ -2,20 +2,16 @@ package service.impl;
 
 
 import com.alibaba.dubbo.rpc.RpcContext;
-import model.UserInfo;
-import org.apache.commons.lang3.time.DateFormatUtils;
-import service.ProviderService;
-
-import java.time.LocalDateTime;
+import com.zx.dubbo.model.UserInfo;
+import com.zx.dubbo.service.ZhaoDubboService;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
 /**
  * @author zhaoxu
  */
-public class ProviderServiceImpl implements ProviderService {
+public class ZhaoDubboServiceImpl implements ZhaoDubboService {
 
     @Override
     public List<HashMap<String, String>> getHashMapInfo() {
@@ -50,6 +46,6 @@ public class ProviderServiceImpl implements ProviderService {
     public String echo(String message) {
 
         System.out.println(RpcContext.getContext().getRemoteAddress());
-        return "wo diao ni ma de !";
+        return "wo diao ni ma de !"+message;
     }
 }

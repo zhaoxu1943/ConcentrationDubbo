@@ -1,5 +1,4 @@
-package com.zx.dubbo.model;
-
+package com.zx.dubbo.common.model;
 import java.io.Serializable;
 
 public class UserInfo implements Serializable {
