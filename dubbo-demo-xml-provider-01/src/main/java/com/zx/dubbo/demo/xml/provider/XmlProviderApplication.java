@@ -1,9 +1,11 @@
+package com.zx.dubbo.demo.xml.provider;
+
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * @author zhaoxu
  */
-public class Application {
+public class XmlProviderApplication {
 
 
     public static void main(String[] args) throws Exception{
