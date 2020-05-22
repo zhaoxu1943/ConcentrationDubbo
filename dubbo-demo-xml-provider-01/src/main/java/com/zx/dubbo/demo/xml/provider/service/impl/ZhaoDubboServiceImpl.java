@@ -1,9 +1,8 @@
-package service.impl;
-
+package com.zx.dubbo.demo.xml.provider.service.impl;
 
 import com.alibaba.dubbo.rpc.RpcContext;
-import com.zx.dubbo.model.UserInfo;
-import com.zx.dubbo.service.ZhaoDubboService;
+import com.zx.dubbo.common.model.UserInfo;
+import com.zx.dubbo.common.service.ZhaoDubboService;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -44,7 +43,6 @@ public class ZhaoDubboServiceImpl implements ZhaoDubboService {
 
     @Override
     public String echo(String message) {
-
         System.out.println(RpcContext.getContext().getRemoteAddress());
         return "wo diao ni ma de !"+message;
     }
