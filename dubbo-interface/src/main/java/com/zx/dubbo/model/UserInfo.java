@@ -1,4 +1,4 @@
-package com.dubbo.model;
+package com.zx.dubbo.model;
 
 import java.io.Serializable;
 

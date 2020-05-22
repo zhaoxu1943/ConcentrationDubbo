@@ -73,6 +73,10 @@
         </dependency>
 
 
+        <dependency>
+            <groupId>com.du</groupId>
+            <artifactId></artifactId>
+        </dependency>
     </dependencies>
 
 </project>
