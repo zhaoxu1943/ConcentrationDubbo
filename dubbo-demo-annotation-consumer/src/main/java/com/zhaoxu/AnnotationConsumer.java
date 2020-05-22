@@ -4,7 +4,7 @@ package com.zhaoxu;
 import com.zhaoxu.config.DubboConsumerConfig;
 import com.zhaoxu.consumer.EchoConsumer;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import
+
 
 /**
  * 编写Annotation消费者客户端的步骤
