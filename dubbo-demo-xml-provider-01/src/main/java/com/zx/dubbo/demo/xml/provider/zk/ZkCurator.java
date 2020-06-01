@@ -80,24 +80,28 @@ public class ZkCurator {
         String zNode_modified = new String(curator.getData().forPath("/zhaoxu1943/xiaosi"));
         System.out.println(zNode_modified);
 //
-//
-//        // 绑定回调函数
-//
-//        ExecutorService pool = Executors.newCachedThreadPool();
-//
-//        cf.create().creatingParentsIfNeeded().withMode(CreateMode.PERSISTENT)
-//                .inBackground(new BackgroundCallback() {
-//                    @Override
-//                    public void processResult(CuratorFramework cf, CuratorEvent ce) throws Exception {
-//                        System.out.println("code:" + ce.getResultCode());
-//                        System.out.println("type:" + ce.getType());
-//                        System.out.println("线程为:" + Thread.currentThread().getName());
-//                    }
-//                }, pool)
-//                .forPath("/super/c3", "c3内容".getBytes());
-//        Thread.sleep(Integer.MAX_VALUE);
-//
-//
+
+        // 绑定回调函数
+
+
+        //回忆newCachedThreadPool,core pool size 为0,无限的max pool size
+        //队列不缓存任务
+        ExecutorService pool = Executors.newCachedThreadPool();
+
+        //使用curator
+        curator.create().creatingParentsIfNeeded().withMode(CreateMode.PERSISTENT)
+                .inBackground(new BackgroundCallback() {
+                    @Override
+                    public void processResult(CuratorFramework curatorFramework, CuratorEvent curatorEvent) throws Exception {
+                        System.out.println("code:" + curatorEvent.getResultCode());
+                        System.out.println("type:" + curatorEvent.getType());
+                        System.out.println("线程为:" + Thread.currentThread().getName());
+                    }
+                }, pool)
+                .forPath("/super/c3", "c3内容".getBytes());
+        Thread.sleep(Integer.MAX_VALUE);
+
+
 //        // 读取子节点getChildren方法 和 判断节点是否存在checkExists方法
 //
 //        List<String> list = cf.getChildren().forPath("/super");
