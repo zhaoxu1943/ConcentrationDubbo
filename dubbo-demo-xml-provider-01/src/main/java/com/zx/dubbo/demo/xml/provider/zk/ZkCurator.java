@@ -89,34 +89,35 @@ public class ZkCurator {
         ExecutorService pool = Executors.newCachedThreadPool();
 
         //使用curator
+        //callback a functor that will get called when the operation has completed,
+        //后台执行,并执行完毕后调用回调函数,具体执行的工作交给一个线程池
+
         curator.create().creatingParentsIfNeeded().withMode(CreateMode.PERSISTENT)
-                .inBackground(new BackgroundCallback() {
-                    @Override
-                    public void processResult(CuratorFramework curatorFramework, CuratorEvent curatorEvent) throws Exception {
-                        System.out.println("code:" + curatorEvent.getResultCode());
-                        System.out.println("type:" + curatorEvent.getType());
-                        System.out.println("线程为:" + Thread.currentThread().getName());
-                    }
+                .inBackground((curatorFramework, curatorEvent) -> {
+                    System.out.println("code:" + curatorEvent.getResultCode());
+                    System.out.println("type:" + curatorEvent.getType());
+                    System.out.println("线程为:" + Thread.currentThread().getName());
                 }, pool)
-                .forPath("/super/c3", "c3内容".getBytes());
-        Thread.sleep(Integer.MAX_VALUE);
+                .forPath("/zhaoxu1943/background", "test curator background".getBytes());
+        //无线sleep
+        //Thread.sleep(Integer.MAX_VALUE);
 
 
-//        // 读取子节点getChildren方法 和 判断节点是否存在checkExists方法
-//
-//        List<String> list = cf.getChildren().forPath("/super");
-//        for (String p : list) {
-//            System.out.println(p);
-//        }
-//
-//        Stat stat = cf.checkExists().forPath("/super/c3");
-//        System.out.println(stat);
-//
-//        Thread.sleep(2000);
-//        cf.delete().guaranteed().deletingChildrenIfNeeded().forPath("/super");
-//
-//
-//        //cf.delete().guaranteed().deletingChildrenIfNeeded().forPath("/super");
+        // 读取子节点getChildren方法 和 判断节点是否存在checkExists方法
+
+        List<String> list = curator.getChildren().forPath("/zhaoxu1943");
+        for (String p : list) {
+            System.out.println(p);
+        }
+
+        Stat stat = curator.checkExists().forPath("/zhaoxu1943/xiaosi");
+        System.out.println(stat);
+
+        Thread.sleep(2000);
+        curator.delete().guaranteed().deletingChildrenIfNeeded().forPath("/zhaoxu1943");
+
+
+
     }
 
 
