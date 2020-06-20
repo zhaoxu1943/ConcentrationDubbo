@@ -16,6 +16,7 @@ import com.zx.dubbo.common.service.EchoService;
 @Service
 public class EchoServiceImpl implements EchoService {
 
+    @Override
     public String echo(String str) {
         return "you say"+ str+"?";
     }
